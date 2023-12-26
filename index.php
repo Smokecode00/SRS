@@ -1,2 +1,2 @@
 <?php
-header('location:navbar.php');
+header('location:dashboard.php');
