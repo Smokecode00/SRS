@@ -12,8 +12,54 @@
 
 <body>
     <div class="wrapper">
-        <aside id="aside">
+        <aside id="sidebar">
             <!-- Content for Sidebar -->
+            <div class="h-100">
+                <div class="sidebar-logo">
+                    <a href="#">Lyceum-Aparri</a>
+                </div>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Admin
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-solid fa-list pe-2"></i>
+                            Dashboard</a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            Pages
+                        </a>
+                        <ul id="pages" class="sidebar-dropdown list-unstyled-collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Page 1</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Page 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-file-lines pe-2"></i>
+                            Posts
+                        </a>
+                        <ul id="posts" class="sidebar-dropdown list-unstyled-collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Posts 1</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Posts 2</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">Posts 3</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </aside>
         <div class="main">
             <nav class="navbar">
