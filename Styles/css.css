@@ -143,3 +143,11 @@ a.sidebar-link {
 #sidebar.collapsed {
   margin-left: -264px;
 }
+
+/* Footer and Nav */
+@media (max-width: 767.98px) {
+  .navbar,
+  footer {
+    width: 100vw;
+  }
+}
