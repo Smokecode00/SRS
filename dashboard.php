@@ -44,19 +44,19 @@
                         </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#posts" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-solid fa-sliders pe-2"></i>
-                            Posts
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#registration" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-file-pen"></i>
+                            Registration
                         </a>
-                        <ul id="posts" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <ul id="registration" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Posts 1</a>
+                                <a href="#" class="sidebar-link">Form 1</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Posts 2</a>
+                                <a href="#" class="sidebar-link">Form 2</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Posts 3</a>
+                                <a href="#" class="sidebar-link">Form 3</a>
                             </li>
                         </ul>
                     </li>
@@ -111,12 +111,12 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/me.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
                                 <a href="#" class="dropdown-item">Setting</a>
-                                <a href="#" class="dropdown-item">Logout</a>
+                                <a href="#" class="dropdown-item text-danger">Logout</a>
                             </div>
                         </li>
                     </ul>
