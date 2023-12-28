@@ -126,100 +126,115 @@
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Admin Dashboard</h4>
+                    <div class="mb-4">
+                        <h4>Student Information</h4>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
-                                <div class="card-body p-0 d-flex flex-fill">
-                                    <div class="row g-0 w-100">
-                                        <div class="col-6">
-                                            <div class="p-3 m-1">
-                                                <h4>Welcome Back, Admin</h4>
-                                                <p class="mb-0">Admin Dashboard, Bryan</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 align-self-end text-end">
-                                            <img src="Img/me.png" class="img-fluid illustration-img" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-lg-4 mb-4">
+                            <label for="" class="form-label">Full Name:</label>
+                            <input type="text" name="fname" class="form-control" required>
                         </div>
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0">
-                                <div class="card-body py-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="flex-grow-1">
-                                            <h4 class="mb-2">
-                                                Lyceum-Aparri Website
-                                            </h4>
-                                            <p class="mb-2">
-                                                Total Online
-                                            </p>
-                                            <div class="mb-0">
-                                                <span class="badge text-success me-2" style="font-size:15-px;">
-                                                    • 57
-                                                </span>
-                                                <span class="text-muted">
-                                                    December 27,2023
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-lg-4 mb-4">
+                            <label for="" class="form-label">Date of Birth:</label>
+                            <input type="date" name="bday" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <label for="" class="form-label">Gender:</label>
+                            <select class="form-select" class="gender" aria-label="Default select example">
+                                <option selected>Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Address:</label>
+                            <input type="text" name="address" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Contact Number:</label>
+                            <input type="tel" name="contact" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Email:</label>
+                            <input type="email" name="email" class="form-control" required>
                         </div>
                     </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h4>Previous Education</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Name of Previous School:</label>
+                            <input type="text" name="pschool" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Grade/ Class Last Attend:</label>
+                            <input type="text" name="grade" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Academic Achievements:</label>
+                            <input type="text" name="achievements" class="form-control" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h4>Additional Information</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Emergency Contact:</label>
+                            <input type="text" name="emergency" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Medical Information:</label>
+                            <input type="text" name="medical" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Special Needs (If any):</label>
+                            <input type="text" name="needs" class="form-control" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h4>Parents or Guardian Information</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Name of Parents or Guardians:</label>
+                            <input type="text" name="guardians" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Contact Details:</label>
+                            <input type="text" name="parents-contact" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Occupation:</label>
+                            <input type="text" name="occupation" class="form-control" required>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="mb-4">
+                        <h4>Uploads</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Birth Certificate:</label>
+                            <input type="file" name="certif" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Passport-sized Photo:</label>
+                            <input type="file" name="photo" class="form-control" required>
+                        </div>
+                        <div class="col-lg-4 mb-2">
+                            <label for="" class="form-label">Academic Transcripts (If applicable):</label>
+                            <input type="file" name="transcripts" class="form-control" required>
+                        </div>
+                    </div>
+                    <hr>
+
                     <!-- Table Content -->
                     <div class="card border-0 ">
-                        <div class="card-header">
-                            <h5 class="card-title">
-                                Basic Table
-                            </h5>
-                            <h6 class="card-subtitle text-muted ">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
-                                repellendus vero ipsum doloribus amet vitae odio suscipit.
-                            </h6>
-                        </div>
-                        <div class="card-body">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Bryan</td>
-                                        <td>Labinay</td>
-                                        <td>@ncdi</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
                     </div>
                 </div>
             </main>
@@ -229,7 +244,7 @@
                         <div class="col-6 text-start">
                             <p class="mb-0">
                                 <a href="#" class="text-muted">
-                                    <strong>Bryan</strong>
+                                    <p>Student Form</p>
                                 </a>
                             </p>
                         </div>
@@ -243,9 +258,6 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">Terms</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Booking</a>
                                 </li>
                             </ul>
                         </div>
