@@ -18,7 +18,7 @@
             <!-- Content for Sidebar -->
             <div class="h-100">
                 <div class="sidebar-logo">
-                    <a href="#">Lyceum-Aparri</a>
+                    <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
@@ -111,11 +111,10 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/icon.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
-                                <a href="student-reg.php" class="dropdown-item">Registration</a>
+                                <a href="user-registration.php" class="dropdown-item">Register</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="#" class="dropdown-item text-danger">Logout</a>
                             </div>
@@ -229,7 +228,7 @@
                         <div class="col-6 text-start">
                             <p class="mb-0">
                                 <a href="#" class="text-muted">
-                                    <strong>Bryan</strong>
+                                    <p>Lyceum-Aparri</p>
                                 </a>
                             </p>
                         </div>
@@ -243,9 +242,6 @@
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted">Terms</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Booking</a>
                                 </li>
                             </ul>
                         </div>
