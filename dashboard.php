@@ -32,31 +32,34 @@
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-file-lines pe-2"></i>
-                            Pages
+                            Mission & Vision
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 1</a>
+                                <a href="#" class="sidebar-link ms-3">• Mission</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 2</a>
+                                <a href="#" class="sidebar-link ms-3">• Vision</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#registration" data-bs-toggle="collapse" aria-expanded="false">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#courses" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-file-pen pe-1"></i>
-                            Registration
+                            Courses
                         </a>
-                        <ul id="registration" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <ul id="courses" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 1</a>
+                                <a href="#" class="sidebar-link ms-3">• BSHM</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 2</a>
+                                <a href="#" class="sidebar-link ms-3">• BSIT</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 3</a>
+                                <a href="#" class="sidebar-link ms-3">• BSAIS</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• BEED</a>
                             </li>
                         </ul>
                     </li>
@@ -111,7 +114,7 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/icon.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="user-registration.php" class="dropdown-item">Register</a>
@@ -136,7 +139,7 @@
                                         <div class="col-6">
                                             <div class="p-3 m-1">
                                                 <h4>Welcome Back, Admin</h4>
-                                                <p class="mb-0">Admin Dashboard, Bryan</p>
+                                                <p class="mb-0">Mark Bryan Labinay</p>
                                             </div>
                                         </div>
                                         <div class="col-6 align-self-end text-end">
@@ -158,12 +161,33 @@
                                                 Total Online
                                             </p>
                                             <div class="mb-0">
-                                                <span class="badge text-success me-2" style="font-size:15-px;">
-                                                    • 57
+                                                <span class="badge text-success me-2" style="font-size:15px;">
+                                                    • 6
                                                 </span>
-                                                <span class="text-muted">
-                                                    December 27,2023
+                                                <span id="dynamicDate" class="text-muted">
+                                                    <!-- The date will be dynamically updated here -->
                                                 </span>
+
+                                                <script>
+                                                    function updateDate() {
+                                                        var currentDate = new Date();
+                                                        var options = {
+                                                            year: 'numeric',
+                                                            month: 'long',
+                                                            day: 'numeric'
+                                                        };
+                                                        var formattedDate = currentDate.toLocaleDateString('en-US', options);
+
+                                                        document.getElementById('dynamicDate').textContent = formattedDate;
+                                                    }
+
+                                                    // Call the function initially
+                                                    updateDate();
+
+                                                    // Set up an interval to update the date every day
+                                                    setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
+                                                </script>
+
                                             </div>
                                         </div>
                                     </div>
@@ -172,49 +196,68 @@
                         </div>
                     </div>
                     <!-- Table Content -->
-                    <div class="card border-0 ">
+                    <div class="card border-0">
                         <div class="card-header">
-                            <h5 class="card-title">
-                                Basic Table
+                            <h5 class="card-title text-black">
+                                Active User
                             </h5>
-                            <h6 class="card-subtitle text-muted ">
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure,
-                                repellendus vero ipsum doloribus amet vitae odio suscipit.
+                            <h6 class="card-subtitle text-dark">
+                                Student User Information
                             </h6>
                         </div>
                         <div class="card-body">
-                            <table class="table">
-                                <thead>
+                            <table class="table table-bordered">
+                                <thead class="text-center table-danger">
                                     <tr>
-                                        <th scope="col">#</th>
+                                        <th scope="col">Online</th>
                                         <th scope="col">First</th>
                                         <th scope="col">Last</th>
-                                        <th scope="col">Handle</th>
+                                        <th scope="col">Course</th>
+                                        <th scope="col">Year & Section</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody class="text-center">
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td colspan="2">Larry the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">4</th>
+                                        <th scope="row" class="text-success">•</th>
                                         <td>Bryan</td>
                                         <td>Labinay</td>
-                                        <td>@ncdi</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-success">•</th>
+                                        <td>Roceldi</td>
+                                        <td>Doniego</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-success">•</th>
+                                        <td>Goldwin</td>
+                                        <td>Doniego</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-success">•</th>
+                                        <td>Ella</td>
+                                        <td>Cortez</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-success">•</th>
+                                        <td>Jam</td>
+                                        <td>Raposas</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="text-success">•</th>
+                                        <td>Marjorie</td>
+                                        <td>Gumarang</td>
+                                        <td>BSIT</td>
+                                        <td>3-A</td>
                                     </tr>
                                 </tbody>
                             </table>

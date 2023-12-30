@@ -32,31 +32,34 @@
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#pages" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-file-lines pe-2"></i>
-                            Pages
+                            Mission & Vision
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 1</a>
+                                <a href="#" class="sidebar-link">• Mission</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Page 2</a>
+                                <a href="#" class="sidebar-link">• Vision</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#registration" data-bs-toggle="collapse" aria-expanded="false">
+                        <a href="#" class="sidebar-link collapsed" data-bs-target="#courses" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-file-pen pe-1"></i>
-                            Registration
+                            Courses
                         </a>
-                        <ul id="registration" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <ul id="courses" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 1</a>
+                                <a href="#" class="sidebar-link ms-3">• BSHM</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 2</a>
+                                <a href="#" class="sidebar-link ms-3">• BSIT</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Form 3</a>
+                                <a href="#" class="sidebar-link ms-3">• BSAIS</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• BEED</a>
                             </li>
                         </ul>
                     </li>
@@ -372,7 +375,7 @@
                         <div class="col-6 text-start">
                             <p class="mb-0">
                                 <a href="#" class="text-muted">
-                                    <p>Lyceum-Aparri</p>
+                                    <p>Registration Form</p>
                                 </a>
                             </p>
                         </div>
