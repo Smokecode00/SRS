@@ -89,9 +89,6 @@ if (isset($_POST['submit'])) {
                                         };
                                         ?>
 
-                                        <!-- <div class="pt-1 mb-4">
-                    <button class="btn btn-dark btn-lg btn-block" name="submit" type="button">Login</button>
-                  </div> -->
                                         <div class="pt-1 mb-4 mt-4">
                                             <input type="submit" name="submit" value="Login" class="btn btn-dark btn-lg btn-block">
                                         </div>

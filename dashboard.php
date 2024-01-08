@@ -143,7 +143,7 @@
                                             </div>
                                         </div>
                                         <div class="col-6 align-self-end text-end">
-                                            <img src="Img/me.png" class="img-fluid illustration-img" alt="">
+                                            <img src="Img/user.png" class="img-fluid illustration-img" alt="">
                                         </div>
                                     </div>
                                 </div>

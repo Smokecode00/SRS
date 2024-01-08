@@ -133,10 +133,10 @@
                     </div>
                     <div class="row">
                         <label for="" class="form-label">Choose who is User:</label>
-                        <div class="col-lg-1">
+                        <div class="col-lg-1 p-2">
                             <button class="btn btn-primary" onclick="toggleForm('adminForm')">Admin</button>
                         </div>
-                        <div class="col-lg-1">
+                        <div class="col-lg-1 p-2">
                             <button class="btn btn-danger" onclick="toggleForm('studentForm')">Student</button>
                         </div>
                     </div>
@@ -145,6 +145,7 @@
                         <!-- Admin form fields go here -->
                         <div class="mb-2">
                             <h3 class="text-primary"><i class="fa-sharp fa-solid fa-bars text-black"></i> Admin Registration</h3>
+
                         </div>
                         <hr>
                         <div class="mb-4">
