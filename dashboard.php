@@ -20,6 +20,9 @@
                 <div class="sidebar-logo">
                     <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
+                <!-- <div class="ms-4">
+                    <a href="#" class="text-decoration-none text-light">Mark Bryan Labinay</a>
+                </div> -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
                         Admin
@@ -70,33 +73,77 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Login</a>
+                                <a href="#" class="sidebar-link ms-3">Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Register</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Forgot Password</a>
+                                <a href="#" class="sidebar-link ms-3">Register</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        Multi Level Menu
+                        Menu
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#multi" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-share-nodes pe-2"></i>
-                            Multi Dropdown
+                            Menu
                         </a>
                         <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1" data-bs-toggle="collapse" aria-expanded="false">Level 1</a>
+                                <a href="#" class="sidebar-link collapsed ms-3" data-bs-target="#level-1" data-bs-toggle="collapse" aria-expanded="false">Grade Level</a>
                                 <ul id="level-1" class="sidebar-dropdown list-unstyled collapse">
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.1</a>
+                                        <a href="#" class="sidebar-link ms-4">• <u>Kindergarten</u></a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.2</a>
+                                        <a href="#" class="sidebar-link ms-4">• <u>Elementary (Grade 1-6)</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Junior High (Grade 7-10)</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Senior High (Grade 11-12)</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>College (Year 1-4)</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed ms-3" data-bs-target="#level-2" data-bs-toggle="collapse" aria-expanded="false">Programs or Streams</a>
+                                <ul id="level-2" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Nursing</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Criminology</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Accountancy</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Education</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Information Technology</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link collapsed ms-3" data-bs-target="#level-3" data-bs-toggle="collapse" aria-expanded="false">Session/Shift</a>
+                                <ul id="level-3" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Morning</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Afternoon</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Evening</u></a>
                                     </li>
                                 </ul>
                             </li>

@@ -143,9 +143,14 @@
                     <hr>
                     <form id="adminForm" action="process_admin.php" method="post" style="display: none;">
                         <!-- Admin form fields go here -->
-                        <div class="mb-2">
-                            <h3 class="text-primary"><i class="fa-sharp fa-solid fa-bars text-black"></i> Admin Registration</h3>
-
+                        <div class="row">
+                            <div class="mb-2">
+                                <h3 class="text-primary"><i class="fa-sharp fa-solid fa-bars text-black"></i> Admin Registration</h3>
+                            </div>
+                            <div class="mb-2">
+                                <input type="button" value="Register" class="btn btn-success">
+                                <input type="button" value="Clear" class="btn btn-danger">
+                            </div>
                         </div>
                         <hr>
                         <div class="mb-4">
@@ -202,47 +207,26 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="mb-4">
-                            <h4>Parents or Guardian Information</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Name of Parents or Guardians:</label>
-                                <input type="text" name="guardians" class="form-control" required>
-                            </div>
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Contact Details:</label>
-                                <input type="text" name="parents-contact" class="form-control" required>
-                            </div>
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Occupation:</label>
-                                <input type="text" name="occupation" class="form-control" required>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="mb-4">
-                            <h4>Uploads</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Birth Certificate:</label>
-                                <input type="file" name="certif" class="form-control" required>
-                            </div>
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Passport-sized Photo:</label>
-                                <input type="file" name="photo" class="form-control" required>
-                            </div>
-                            <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Academic Transcripts (If applicable):</label>
-                                <input type="file" name="transcripts" class="form-control" required>
-                            </div>
-                        </div>
-                        <hr>
                     </form>
+
+
+
+
+
+
+
+
+
                     <form id="studentForm" action="process_student.php" method="post" style="display: none;">
                         <!-- Student form fields go here -->
-                        <div class="mb-2">
-                            <h3 class="text-danger"><i class="fa-sharp fa-solid fa-bars text-black"></i> Student Registration</h3>
+                        <div class="row">
+                            <div class="mb-2">
+                                <h3 class="text-danger"><i class="fa-sharp fa-solid fa-bars text-black"></i> Student Registration</h3>
+                            </div>
+                            <div class="mb-2">
+                                <input type="button" value="Register" class="btn btn-success">
+                                <input type="button" value="Clear" class="btn btn-danger">
+                            </div>
                         </div>
                         <hr>
                         <div class="mb-4">
@@ -348,6 +332,24 @@
                             <div class="col-lg-4 mb-2">
                                 <label for="" class="form-label">Academic Transcripts (If applicable):</label>
                                 <input type="file" name="transcripts" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Student Credentials</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Username:</label>
+                                <input type="text" name="username" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control" required>
                             </div>
                         </div>
                         <hr>
