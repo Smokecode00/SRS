@@ -21,11 +21,11 @@
                     <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
                 <!-- <div class="ms-4">
-                    <a href="#" class="text-decoration-none text-light">Mark Bryan Labinay</a>
+                    <a href="#" class="text-decoration-none text-light"><i class="fa-solid fa-circle text-success ms-1"></i> Mark Bryan Labinay</a>
                 </div> -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        User
+                        Navigation
                     </li>
                     <li class="sidebar-item">
                         <a href="dashboard.php" class="sidebar-link">
@@ -73,10 +73,10 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3">Login</a>
+                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3">Register</a>
+                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>
@@ -239,6 +239,34 @@
                     </ul>
                 </div>
             </nav>
+            <!-- PHP -->
+            <?php
+            include 'Includes/dbconn.php';
+
+            if (isset($_POST['submit'])) {
+                $name = mysqli_real_escape_string($conn, $_POST['name']);
+                $email = mysqli_real_escape_string($conn, $_POST['email']);
+                $pass = md5($_POST['password']);
+                $cpass = md5($_POST['cpassword']);
+                $user_type = ($_POST['user_type']);
+
+                $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
+                $result = mysqli_query($conn, $select);
+
+                if (mysqli_num_rows($result) > 0) {
+
+                    $error[] = 'User already exists!';
+                } else {
+                    if ($pass != $cpass) {
+                        $error[] = 'Password not match!';
+                    } else {
+                        $insert = "INSERT INTO registertbl(name, email, password, user_type) VALUES('$name', '$email', '$pass', '$user_type')";
+                        mysqli_query($conn, $insert);
+                        $msg[] = 'Register successfully';
+                    }
+                }
+            }
+            ?>
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
@@ -260,7 +288,20 @@
                                                     </div>
 
                                                     <h5 class="fw-semibold mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>
-
+                                                    <?php
+                                                    if (isset($error)) {
+                                                        foreach ($error as $error) {
+                                                            echo '<span class="error-msg text-danger fw-semibold ">' . $error . '</span>';
+                                                        };
+                                                    };
+                                                    ?>
+                                                    <?php
+                                                    if (isset($msg)) {
+                                                        foreach ($msg as $msg) {
+                                                            echo '<span class="error-msg text-warning fw-semibold">' . $msg . '</span>';
+                                                        };
+                                                    };
+                                                    ?>
                                                     <div class="form-outline mb-3">
                                                         <input type="text" id="" name="name" class="form-control form-control text-black" placeholder="Full Name" autocomplete="off" required />
 
@@ -279,8 +320,8 @@
                                                     </div>
                                                     <select class="form-select form-select text-muted mb-1" name="user_type">
                                                         <option selected>Who's User?</option>
-                                                        <option value="admin">Admin</option>
-                                                        <option value="user" class="form-control form-control text-black">Student</option>
+                                                        <option value="admin" class="text-black">Admin</option>
+                                                        <option value="user" class="text-black">Student</option>
                                                     </select>
 
                                                     <div class="mt-4">

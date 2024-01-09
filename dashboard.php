@@ -21,11 +21,11 @@
                     <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
                 <!-- <div class="ms-4">
-                    <a href="#" class="text-decoration-none text-light">Mark Bryan Labinay</a>
+                    <a href="#" class="text-decoration-none text-light"><i class="fa-solid fa-circle text-success ms-1"></i> Mark Bryan Labinay</a>
                 </div> -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        User
+                        Navigation
                     </li>
                     <li class="sidebar-item">
                         <a href="dashboard.php" class="sidebar-link">
@@ -73,10 +73,10 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3">Login</a>
+                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3">Register</a>
+                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>

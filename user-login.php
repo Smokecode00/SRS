@@ -1,3 +1,34 @@
+<?php
+include 'Includes/dbconn.php';
+session_start();
+if (isset($_POST['submit'])) {
+    // $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['usernameemail']);
+    $pass = md5($_POST['password']);
+    // $cpass = md5($_POST['cpassword']);
+    // $user_type = ($_POST['user_type']);
+
+    $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_array($result);
+
+        if ($row['user_type'] == 'admin') {
+
+            $_SESSION['admin_name'] = $row['name'];
+            header('location:admin.php');
+        } elseif ($row['user_type'] == 'user') {
+
+            $_SESSION['user_name'] = $row['name'];
+            header('location:home.php');
+        }
+    } else {
+        $error[] = 'Incorrect email or password!';
+    }
+};
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,11 +52,11 @@
                     <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
                 <!-- <div class="ms-4">
-                    <a href="#" class="text-decoration-none text-light">Mark Bryan Labinay</a>
+                    <a href="#" class="text-decoration-none text-light"><i class="fa-solid fa-circle text-success ms-1"></i> Mark Bryan Labinay</a>
                 </div> -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        User
+                        Navigation
                     </li>
                     <li class="sidebar-item">
                         <a href="dashboard.php" class="sidebar-link">
@@ -73,10 +104,10 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3">Login</a>
+                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3">Register</a>
+                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>
@@ -239,6 +270,9 @@
                     </ul>
                 </div>
             </nav>
+            <!-- PHP -->
+
+
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
@@ -260,28 +294,20 @@
                                                     </div>
 
                                                     <h5 class="fw-semibold mb-3 pb-3" style="letter-spacing: 1px;">Sign-in your account</h5>
-
+                                                    <?php
+                                                    if (isset($error)) {
+                                                        foreach ($error as $error) {
+                                                            echo '<span class="error-msg fw-semibold text-danger">' . $error . '</span>';
+                                                        };
+                                                    };
+                                                    ?>
                                                     <div class="form-outline mb-0">
-                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Username or Email" class="form-control form-control text-black" required />
+                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Username or Email" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
-                                                    <!-- <?php
-                                                            if (isset($error)) {
-                                                                foreach ($error as $error) {
-                                                                    echo '<span class="error-msg text-danger ms-2">' . $error . '</span>';
-                                                                };
-                                                            };
-                                                            ?> -->
 
                                                     <div class="form-outline mb-0 mt-3">
-                                                        <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control form-control text-black" required />
+                                                        <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
-                                                    <!-- <?php
-                                                            if (isset($error1)) {
-                                                                foreach ($error1 as $error1) {
-                                                                    echo '<span class="error-msg text-danger ms-2">' . $error1 . '</span>';
-                                                                };
-                                                            };
-                                                            ?> -->
 
                                                     <div class="pt-1 mb-4 mt-4">
                                                         <input type="submit" name="submit" value="Login" class="btn btn-primary btn-sm btn-block rounded-5" style="font-size:20px; font-weight:500; letter-spacing: 2px;">
