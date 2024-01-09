@@ -73,7 +73,7 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3">Login</a>
+                                <a href="#" class="sidebar-link ms-3">Login</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="user-registration.php" class="sidebar-link ms-3">Register</a>
@@ -244,146 +244,249 @@
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Dashboard</h4>
+                    <div class="mb-4">
+                        <h4>User Registration</h4>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
-                                <div class="card-body p-0 d-flex flex-fill">
-                                    <div class="row g-0 w-100">
-                                        <div class="col-6">
-                                            <div class="p-3 m-1">
-                                                <h4>Welcome to,</h4>
-                                                <h3> Lyceum of Aparri</h3>
-                                                <a href="#" class="mb-0">
-                                                    <i class="fa-solid fa-location-dot"></i>
-                                                    Aparri, Cagayan
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 align-self-end text-end">
-                                            <img src="Img/logo.png" class="img-fluid illustration-img" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <label for="" class="form-label">Choose who is User:</label>
+                        <div class="col-lg-1 p-2">
+                            <button class="btn btn-primary" onclick="toggleForm('adminForm')">Admin</button>
                         </div>
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0">
-                                <div class="card-body py-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="flex-grow-1">
-                                            <h4 class="mb-2">
-                                                Lyceum-Aparri Website
-                                            </h4>
-                                            <p class="mb-2">
-                                                Total Online
-                                            </p>
-                                            <div class="mb-0">
-                                                <span class="badge text-success me-2" style="font-size:15px;">
-                                                    • 6
-                                                </span>
-                                                <span id="dynamicDate" class="text-muted">
-                                                    <!-- The date will be dynamically updated here -->
-                                                </span>
-
-                                                <script>
-                                                    function updateDate() {
-                                                        var currentDate = new Date();
-                                                        var options = {
-                                                            year: 'numeric',
-                                                            month: 'long',
-                                                            day: 'numeric'
-                                                        };
-                                                        var formattedDate = currentDate.toLocaleDateString('en-US', options);
-
-                                                        document.getElementById('dynamicDate').textContent = formattedDate;
-                                                    }
-
-                                                    // Call the function initially
-                                                    updateDate();
-
-                                                    // Set up an interval to update the date every day
-                                                    setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
-                                                </script>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="col-lg-1 p-2">
+                            <button class="btn btn-danger" onclick="toggleForm('studentForm')">Student</button>
                         </div>
                     </div>
-                    <!-- Table Content -->
-                    <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title text-black">
-                                Active User
-                            </h5>
-                            <h6 class="card-subtitle text-dark">
-                                Student User Information
-                            </h6>
+                    <hr>
+                    <form id="adminForm" action="process_admin.php" method="post" style="display: none;">
+                        <!-- Admin form fields go here -->
+                        <div class="row">
+                            <div class="mb-2">
+                                <h3 class="text-primary"><i class="fa-sharp fa-solid fa-bars text-black"></i> Admin Registration</h3>
+                            </div>
+                            <div class="mb-2">
+                                <input type="button" value="Register" class="btn btn-success">
+                                <input type="button" value="Clear" class="btn btn-danger">
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead class="text-center table-danger">
-                                    <tr>
-                                        <th scope="col">Online</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Course</th>
-                                        <th scope="col">Year & Section</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Bryan</td>
-                                        <td>Labinay</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Roceldi</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Goldwin</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Ella</td>
-                                        <td>Cortez</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Jam</td>
-                                        <td>Raposas</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Marjorie</td>
-                                        <td>Gumarang</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Admin Information</h4>
                         </div>
-                    </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Full Name:</label>
+                                <input type="text" name="fname" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Position/Role:</label>
+                                <input type="text" name="role" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Contact Information:</label>
+                                <input type="text" name="contact" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Access Credentials</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Username:</label>
+                                <input type="text" name="username" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Documents</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Emergency Contact:</label>
+                                <input type="text" name="emergency" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Medical Information:</label>
+                                <input type="text" name="medical" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Special Needs (If any):</label>
+                                <input type="text" name="needs" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
+
+
+
+
+
+
+
+
+
+                    <form id="studentForm" action="process_student.php" method="post" style="display: none;">
+                        <!-- Student form fields go here -->
+                        <div class="row">
+                            <div class="mb-2">
+                                <h3 class="text-danger"><i class="fa-sharp fa-solid fa-bars text-black"></i> Student Registration</h3>
+                            </div>
+                            <div class="mb-2">
+                                <input type="button" value="Register" class="btn btn-success">
+                                <input type="button" value="Clear" class="btn btn-danger">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Student Information</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Full Name:</label>
+                                <input type="text" name="fname" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Date of Birth:</label>
+                                <input type="date" name="bday" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-4">
+                                <label for="" class="form-label">Gender:</label>
+                                <select class="form-select" class="gender" aria-label="Default select example">
+                                    <option selected>Select</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Address:</label>
+                                <input type="text" name="address" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Contact Number:</label>
+                                <input type="tel" name="contact" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Previous Education</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Name of Previous School:</label>
+                                <input type="text" name="pschool" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Grade/ Class Last Attend:</label>
+                                <input type="text" name="grade" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Academic Achievements:</label>
+                                <input type="text" name="achievements" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Additional Information</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Emergency Contact:</label>
+                                <input type="text" name="emergency" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Medical Information:</label>
+                                <input type="text" name="medical" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Special Needs (If any):</label>
+                                <input type="text" name="needs" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Parents or Guardian Information</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Name of Parents or Guardians:</label>
+                                <input type="text" name="guardians" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Contact Details:</label>
+                                <input type="text" name="parents-contact" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Occupation:</label>
+                                <input type="text" name="occupation" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Uploads</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Birth Certificate:</label>
+                                <input type="file" name="certif" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Passport-sized Photo:</label>
+                                <input type="file" name="photo" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Academic Transcripts (If applicable):</label>
+                                <input type="file" name="transcripts" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <h4>Student Credentials</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Username:</label>
+                                <input type="text" name="username" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-lg-4 mb-2">
+                                <label for="" class="form-label">Password:</label>
+                                <input type="password" name="password" class="form-control" required>
+                            </div>
+                        </div>
+                        <hr>
+                    </form>
                 </div>
+                <script>
+                    function toggleForm(formId) {
+                        var form = document.getElementById(formId);
+                        var otherFormId = (formId === 'studentForm') ? 'adminForm' : 'studentForm';
+                        var otherForm = document.getElementById(otherFormId);
+
+                        // Close the other form
+                        otherForm.style.display = 'none';
+
+                        if (form.style.display === 'none') {
+                            form.style.display = 'block';
+                        } else {
+                            form.style.display = 'none';
+                        }
+                    }
+                </script>
             </main>
             <footer class="footer">
                 <div class="container-fluid">

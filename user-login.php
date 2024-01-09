@@ -230,12 +230,10 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
+                                <i class="fa-solid fa-gear fs-3 text-dark"></i>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
                                 <a href="#" class="dropdown-item">Setting</a>
-                                <a href="#" class="dropdown-item text-danger">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -244,173 +242,62 @@
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Dashboard</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
-                                <div class="card-body p-0 d-flex flex-fill">
-                                    <div class="row g-0 w-100">
-                                        <div class="col-6">
-                                            <div class="p-3 m-1">
-                                                <h4>Welcome to,</h4>
-                                                <h3> Lyceum of Aparri</h3>
-                                                <a href="#" class="mb-0">
-                                                    <i class="fa-solid fa-location-dot"></i>
-                                                    Aparri, Cagayan
-                                                </a>
-                                            </div>
+                    <div class="container py-5 h-100">
+                        <div class="row d-flex justify-content-center align-items-center h-100">
+                            <div class="col col-xl-10">
+                                <div class="card bg-secondary " style="border-radius: 1rem;">
+                                    <div class="row g-0">
+                                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                                            <img src="Img/logo1.png" alt="login form" class="img-fluid mt-3 ms-5 border-2" width="300" height="250" />
                                         </div>
-                                        <div class="col-6 align-self-end text-end">
-                                            <img src="Img/logo.png" class="img-fluid illustration-img" alt="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0">
-                                <div class="card-body py-4">
-                                    <div class="d-flex align-items-start">
-                                        <div class="flex-grow-1">
-                                            <h4 class="mb-2">
-                                                Lyceum-Aparri Website
-                                            </h4>
-                                            <p class="mb-2">
-                                                Total Online
-                                            </p>
-                                            <div class="mb-0">
-                                                <span class="badge text-success me-2" style="font-size:15px;">
-                                                    • 6
-                                                </span>
-                                                <span id="dynamicDate" class="text-muted">
-                                                    <!-- The date will be dynamically updated here -->
-                                                </span>
+                                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                                            <div class="card-body p-4 p-lg-5 text-black">
 
-                                                <script>
-                                                    function updateDate() {
-                                                        var currentDate = new Date();
-                                                        var options = {
-                                                            year: 'numeric',
-                                                            month: 'long',
-                                                            day: 'numeric'
-                                                        };
-                                                        var formattedDate = currentDate.toLocaleDateString('en-US', options);
+                                                <form action="" method="post">
+                                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                                        <img src="Img/logo1.png" alt="logo" width="50" height="50">
+                                                        <span class="h1 fw-bold mb-0 ms-1">Lyceum-Aparri</span>
+                                                    </div>
 
-                                                        document.getElementById('dynamicDate').textContent = formattedDate;
-                                                    }
+                                                    <h5 class="fw-semibold mb-3 pb-3" style="letter-spacing: 1px;">Sign-in your account</h5>
 
-                                                    // Call the function initially
-                                                    updateDate();
+                                                    <div class="form-outline mb-0">
+                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Username or Email" class="form-control form-control text-black" required />
+                                                    </div>
+                                                    <!-- <?php
+                                                            if (isset($error)) {
+                                                                foreach ($error as $error) {
+                                                                    echo '<span class="error-msg text-danger ms-2">' . $error . '</span>';
+                                                                };
+                                                            };
+                                                            ?> -->
 
-                                                    // Set up an interval to update the date every day
-                                                    setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
-                                                </script>
+                                                    <div class="form-outline mb-0 mt-3">
+                                                        <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control form-control text-black" required />
+                                                    </div>
+                                                    <!-- <?php
+                                                            if (isset($error1)) {
+                                                                foreach ($error1 as $error1) {
+                                                                    echo '<span class="error-msg text-danger ms-2">' . $error1 . '</span>';
+                                                                };
+                                                            };
+                                                            ?> -->
+
+                                                    <div class="pt-1 mb-4 mt-4">
+                                                        <input type="submit" name="submit" value="Login" class="btn btn-primary btn-sm btn-block rounded-5" style="font-size:20px; font-weight:500; letter-spacing: 2px;">
+                                                    </div>
+
+                                                </form>
 
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Table Content -->
-                    <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title text-black">
-                                Active User
-                            </h5>
-                            <h6 class="card-subtitle text-dark">
-                                Student User Information
-                            </h6>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead class="text-center table-danger">
-                                    <tr>
-                                        <th scope="col">Online</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Course</th>
-                                        <th scope="col">Year & Section</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Bryan</td>
-                                        <td>Labinay</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Roceldi</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Goldwin</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Ella</td>
-                                        <td>Cortez</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Jam</td>
-                                        <td>Raposas</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Marjorie</td>
-                                        <td>Gumarang</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-start">
-                            <p class="mb-0">
-                                <a href="#" class="text-muted">
-                                    <p>Lyceum-Aparri</p>
-                                </a>
-                            </p>
-                        </div>
-                        <div class="col-6 text-end">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Contact</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">About Us</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-muted">Terms</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
 
