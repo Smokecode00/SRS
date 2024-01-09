@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
     <script src="https://kit.fontawesome.com/5c14b0052b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles/css.css">
-    <title>Dashboard</title>
+    <title>Register</title>
 </head>
 
 <body>

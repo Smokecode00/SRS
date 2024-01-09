@@ -18,11 +18,11 @@ if (isset($_POST['submit'])) {
         if ($row['user_type'] == 'admin') {
 
             $_SESSION['admin_name'] = $row['name'];
-            header('location:admin.php');
+            header('location:admin-form.php');
         } elseif ($row['user_type'] == 'user') {
 
             $_SESSION['user_name'] = $row['name'];
-            header('location:home.php');
+            header('location:student-form.php');
         }
     } else {
         $error[] = 'Incorrect email or password!';
@@ -40,7 +40,7 @@ if (isset($_POST['submit'])) {
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
     <script src="https://kit.fontawesome.com/5c14b0052b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles/css.css">
-    <title>Dashboard</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -302,11 +302,11 @@ if (isset($_POST['submit'])) {
                                                     };
                                                     ?>
                                                     <div class="form-outline mb-0">
-                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Username or Email" class="form-control form-control text-black" autocomplete="off" required />
+                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Email" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
 
                                                     <div class="form-outline mb-0 mt-3">
-                                                        <input type="password" id="password" name="password" placeholder="Enter Password" class="form-control form-control text-black" autocomplete="off" required />
+                                                        <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
 
                                                     <div class="pt-1 mb-4 mt-4">
