@@ -20,9 +20,12 @@
                 <div class="sidebar-logo">
                     <a href="dashboard.php">Lyceum-Aparri</a>
                 </div>
+                <!-- <div class="ms-4">
+                    <a href="#" class="text-decoration-none text-light">Mark Bryan Labinay</a>
+                </div> -->
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
-                        Admin
+                        User
                     </li>
                     <li class="sidebar-item">
                         <a href="dashboard.php" class="sidebar-link">
@@ -36,30 +39,30 @@
                         </a>
                         <ul id="pages" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">• Mission</a>
+                                <a href="#" class="sidebar-link ms-3">• Mission</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">• Vision</a>
+                                <a href="#" class="sidebar-link ms-3">• Vision</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#courses" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-solid fa-file-pen pe-1"></i>
-                            Courses
+                            Courses Offered
                         </a>
                         <ul id="courses" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• BSHM</a>
+                                <a href="#" class="sidebar-link ms-3">• Bachelor's Courses(13)</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• BSIT</a>
+                                <a href="#" class="sidebar-link ms-3">• Master's Courses(2)</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• BSAIS</a>
+                                <a href="#" class="sidebar-link ms-3">• Doctorate Courses(1)</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• BEED</a>
+                                <a href="#" class="sidebar-link ms-3">• Certificate Courses(4)</a>
                             </li>
                         </ul>
                     </li>
@@ -70,35 +73,148 @@
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Login</a>
+                                <a href="#" class="sidebar-link ms-3">Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Register</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">Forgot Password</a>
+                                <a href="user-registration.php" class="sidebar-link ms-3">Register</a>
                             </li>
                         </ul>
                     </li>
                     <li class="sidebar-header">
-                        Multi Level Menu
+                        Menu
                     </li>
+                    <!-- Grades -->
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#multi" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-solid fa-share-nodes pe-2"></i>
-                            Multi Dropdown
+                            <i class="fa-solid fa-bars-staggered"></i>
+                            Grade Level
                         </a>
                         <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link collapsed" data-bs-target="#level-1" data-bs-toggle="collapse" aria-expanded="false">Level 1</a>
+                                <a class="sidebar-link collapsed ms-3" data-bs-target="#level-1" data-bs-toggle="collapse" aria-expanded="false">Kindergarten</a>
                                 <ul id="level-1" class="sidebar-dropdown list-unstyled collapse">
                                     <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.1</a>
-                                    </li>
-                                    <li class="sidebar-item">
-                                        <a href="#" class="sidebar-link">Level 1.2</a>
+                                        <a href="#" class="sidebar-link ms-4">• <u>Kindergarten</u></a>
                                     </li>
                                 </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link collapsed ms-3" data-bs-target="#level-2" data-bs-toggle="collapse" aria-expanded="false">Elementary</a>
+                                <ul id="level-2" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 1</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 2</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 3</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 4</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 5</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 6</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link collapsed ms-3" data-bs-target="#level-3" data-bs-toggle="collapse" aria-expanded="false">Junior High</a>
+                                <ul id="level-3" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 7</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 8</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 9</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 10</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link collapsed ms-3" data-bs-target="#level-4" data-bs-toggle="collapse" aria-expanded="false">Senior High</a>
+                                <ul id="level-4" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 11</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>Grade 12</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a class="sidebar-link collapsed ms-3" data-bs-target="#level-5" data-bs-toggle="collapse" aria-expanded="false">College</a>
+                                <ul id="level-5" class="sidebar-dropdown list-unstyled collapse">
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>1st Year</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>2nd Year</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>3rd Year</u></a>
+                                    </li>
+                                    <li class="sidebar-item">
+                                        <a href="#" class="sidebar-link ms-4">• <u>4th Year</u></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Program -->
+                    <li class="sidebar-item">
+                        <a class="sidebar-link collapsed" data-bs-target="#program" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            Programs Offered
+                        </a>
+                        <ul id="program" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• English Courses</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• School of Information</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• Technology</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• School of Information</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3"><u>View All</u></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- Session/Shift -->
+                    <li class="sidebar-item">
+                        <a class="sidebar-link collapsed" data-bs-target="#session" data-bs-toggle="collapse" aria-expanded="false">
+                            <i class="fa-solid fa-user-clock"></i>
+                            Session/Shift
+                        </a>
+                        <ul id="session" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• Morning</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• Afternoon</a>
+                            </li>
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link ms-3">• Evening</a>
                             </li>
                         </ul>
                     </li>
@@ -114,10 +230,10 @@
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/icon.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Register</a>
+                                <a href="#" class="dropdown-item">Profile</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="#" class="dropdown-item text-danger">Logout</a>
                             </div>
@@ -378,7 +494,7 @@
                         <div class="col-6 text-start">
                             <p class="mb-0">
                                 <a href="#" class="text-muted">
-                                    <p>Registration Form</p>
+                                    <p>Lyceum-Aparri</p>
                                 </a>
                             </p>
                         </div>
