@@ -318,9 +318,9 @@
                                                     <div class="form-outline mb-3">
                                                         <input type="password" id="form2Example27" name="cpassword" placeholder="Confirm Password" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
-                                                    <select class="form-select form-select text-muted mb-1" name="user_type">
+                                                    <select class="form-select form-select text-black mb-1" name="user_type">
                                                         <option selected>Who's User?</option>
-                                                        <option value="admin" class="text-black">Admin</option>
+                                                        <option value="admin" class="text-black">Teacher</option>
                                                         <option value="user" class="text-black">Student</option>
                                                     </select>
 

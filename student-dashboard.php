@@ -1,3 +1,13 @@
+<?php
+include 'Includes/dbconn.php';
+session_start();
+
+$user_id = $_SESSION['id'];
+
+if (!isset($user_id)) {
+    header('Location: user-login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,20 +73,6 @@
                             </li>
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link ms-3">• Certificate Courses(4)</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-regular fa-user pe-2"></i>
-                            Auth
-                        </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>
@@ -234,13 +230,22 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
-                                <a href="comment.php" class="dropdown-item">Fill Form</a>
+                                <a href="student-dashboard.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
+                                <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
+            <!-- PHP -->
+            <?php
+            $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
+                or die('query failed');
+            if (mysqli_num_rows($select) > 0) {
+                $fetch = mysqli_fetch_assoc($select);
+            }
+            ?>
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
@@ -254,11 +259,11 @@
                                     <div class="row g-0 w-100">
                                         <div class="col-6">
                                             <div class="p-3 m-1">
-                                                <h4>Welcome to,</h4>
-                                                <h3></h3>
+                                                <h4>Your Info</h4>
+                                                <h3><?php echo $fetch['name']; ?></h3>
                                                 <a href="#" class="mb-0">
-                                                    <i class="fa-solid fa-location-dot"></i>
-                                                    Aparri, Cagayan
+                                                    <i class="fa-solid fa-at"></i>:
+                                                    <?php echo $fetch['email']; ?>
                                                 </a>
                                             </div>
                                         </div>
@@ -316,73 +321,7 @@
                         </div>
                     </div>
                     <!-- Table Content -->
-                    <div class="card border-0">
-                        <div class="card-header">
-                            <h5 class="card-title text-black">
-                                Active User
-                            </h5>
-                            <h6 class="card-subtitle text-dark">
-                                Student User Information
-                            </h6>
-                        </div>
-                        <div class="card-body">
-                            <table class="table table-bordered">
-                                <thead class="text-center table-danger">
-                                    <tr>
-                                        <th scope="col">Online</th>
-                                        <th scope="col">First</th>
-                                        <th scope="col">Last</th>
-                                        <th scope="col">Course</th>
-                                        <th scope="col">Year & Section</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="text-center">
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Bryan</td>
-                                        <td>Labinay</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Roceldi</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Goldwin</td>
-                                        <td>Doniego</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Ella</td>
-                                        <td>Cortez</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Jam</td>
-                                        <td>Raposas</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row" class="text-success">•</th>
-                                        <td>Marjorie</td>
-                                        <td>Gumarang</td>
-                                        <td>BSIT</td>
-                                        <td>3-A</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+
                 </div>
             </main>
             <footer class="footer">

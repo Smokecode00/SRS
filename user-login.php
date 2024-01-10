@@ -17,11 +17,11 @@ if (isset($_POST['submit'])) {
 
         if ($row['user_type'] == 'admin') {
 
-            $_SESSION['admin_name'] = $row['name'];
-            header('location:admin-dashboard.php');
+            $_SESSION['id'] = $row['name'];
+            header('location:teacher-dashboard.php');
         } elseif ($row['user_type'] == 'user') {
 
-            $_SESSION['user_name'] = $row['name'];
+            $_SESSION['id'] = $row['name'];
             header('location:student-dashboard.php');
         }
     } else {
@@ -302,7 +302,7 @@ if (isset($_POST['submit'])) {
                                                     };
                                                     ?>
                                                     <div class="form-outline mb-0">
-                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Email" class="form-control form-control text-black" autocomplete="off" required />
+                                                        <input type="email" id="usernameemail" name="usernameemail" placeholder="Email" class="form-control form-control text-black" autocomplete="off" required />
                                                     </div>
 
                                                     <div class="form-outline mb-0 mt-3">

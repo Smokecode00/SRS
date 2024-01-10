@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
                         Navigation
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link">
+                        <a href="student-dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
                             Dashboard</a>
                     </li>
@@ -108,20 +108,6 @@ if (isset($_POST['submit'])) {
                             </li>
                             <li class="sidebar-item">
                                 <a class="sidebar-link ms-3">• Certificate Courses(4)</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-regular fa-user pe-2"></i>
-                            Auth
-                        </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>
@@ -274,11 +260,14 @@ if (isset($_POST['submit'])) {
                 <div class="navbar-collapse navbar">
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
-                            <a data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <i class="fa-solid fa-gear fs-3 text-dark"></i>
+                            <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
+                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item">Setting</a>
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="student-form.php" class="dropdown-item">Fill Form</a>
+                                <a href="#" class="dropdown-item">Setting</a>
+                                <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -288,9 +277,10 @@ if (isset($_POST['submit'])) {
 
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="mb-4">
-                        <h4><a href="user-register.php"><i class="fa-solid fa-circle-left me-3"></i></a>Student Information</h4>
+                    <div class="mt-2">
+                        <h3>Student Information</h3>
                     </div>
+                    <hr class="mb-4 text-white">
                     <form action="" method="post">
                         <div class="row">
                             <div class="col-lg-4 mb-4">
