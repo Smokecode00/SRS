@@ -1,34 +1,3 @@
-<?php
-include 'Includes/dbconn.php';
-session_start();
-if (isset($_POST['submit'])) {
-    // $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['usernameemail']);
-    $pass = md5($_POST['password']);
-    // $cpass = md5($_POST['cpassword']);
-    // $user_type = ($_POST['user_type']);
-
-    $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
-    $result = mysqli_query($conn, $select);
-
-    if (mysqli_num_rows($result) > 0) {
-
-        $row = mysqli_fetch_array($result);
-
-        if ($row['user_type'] == 'admin') {
-
-            $_SESSION['admin_name'] = $row['name'];
-            header('location:admin-dashboard.php');
-        } elseif ($row['user_type'] == 'user') {
-
-            $_SESSION['user_name'] = $row['name'];
-            header('location:student-dashboard.php');
-        }
-    } else {
-        $error[] = 'Incorrect email or password!';
-    }
-};
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,7 +9,7 @@ if (isset($_POST['submit'])) {
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
     <script src="https://kit.fontawesome.com/5c14b0052b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles/css.css">
-    <title>Login</title>
+    <title>Dashboard</title>
 </head>
 
 <body>
@@ -104,7 +73,7 @@ if (isset($_POST['submit'])) {
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
-                                <a href="user-login.php" class="sidebar-link ms-3 text-primary"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
+                                <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
                             </li>
                             <li class="sidebar-item">
                                 <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
@@ -261,60 +230,41 @@ if (isset($_POST['submit'])) {
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <i class="fa-solid fa-gear fs-3 text-dark"></i>
+                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
+                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="comment.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
+                                <a href="#" class="dropdown-item text-danger">Logout</a>
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <!-- PHP -->
-
-
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="container py-5 h-100">
-                        <div class="row d-flex justify-content-center align-items-center h-100">
-                            <div class="col col-xl-10">
-                                <div class="card bg-secondary " style="border-radius: 1rem;">
-                                    <div class="row g-0">
-                                        <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                            <img src="Img/logo1.png" alt="login form" class="img-fluid mt-3 ms-5 border-2" width="300" height="250" />
-                                        </div>
-                                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                            <div class="card-body p-4 p-lg-5 text-black">
-
-                                                <form action="" method="post">
-                                                    <div class="d-flex align-items-center mb-3 pb-1">
-                                                        <img src="Img/logo1.png" alt="logo" width="50" height="50">
-                                                        <span class="h1 fw-bold mb-0 ms-1">Lyceum-Aparri</span>
-                                                    </div>
-
-                                                    <h5 class="fw-semibold mb-3 pb-3" style="letter-spacing: 1px;">Sign-in your account</h5>
-                                                    <?php
-                                                    if (isset($error)) {
-                                                        foreach ($error as $error) {
-                                                            echo '<span class="error-msg fw-semibold text-danger">' . $error . '</span>';
-                                                        };
-                                                    };
-                                                    ?>
-                                                    <div class="form-outline mb-0">
-                                                        <input type="text" id="usernameemail" name="usernameemail" placeholder="Email" class="form-control form-control text-black" autocomplete="off" required />
-                                                    </div>
-
-                                                    <div class="form-outline mb-0 mt-3">
-                                                        <input type="password" id="password" name="password" placeholder="Password" class="form-control form-control text-black" autocomplete="off" required />
-                                                    </div>
-
-                                                    <div class="pt-1 mb-4 mt-4">
-                                                        <input type="submit" name="submit" value="Login" class="btn btn-primary btn-sm btn-block rounded-5" style="font-size:20px; font-weight:500; letter-spacing: 2px;">
-                                                    </div>
-
-                                                </form>
-
+                    <div class="mb-3">
+                        <h4>Form</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex">
+                            <div class="card flex-fill border-0 illustration">
+                                <div class="card-body p-0 d-flex flex-fill">
+                                    <div class="row g-0 w-100">
+                                        <div class="col-8">
+                                            <div class="p-3 m-1">
+                                                <h4>Register or Login First</h4>
+                                                <h3></h3>
+                                                <a href="user-login.php" class="mb-0 fw-semibold text-black ">
+                                                    <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                                                    <u>Login</u>
+                                                </a><br>
+                                                <a href="user-registration.php" class="mb-0 fw-semibold text-black ">
+                                                    <i class="fa-solid fa-file-pen"></i>
+                                                    <u>Register</u>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -322,8 +272,33 @@ if (isset($_POST['submit'])) {
                             </div>
                         </div>
                     </div>
-                </div>
             </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                            <p class="mb-0">
+                                <a href="#" class="text-muted">
+                                    <p>Lyceum-Aparri</p>
+                                </a>
+                            </p>
+                        </div>
+                        <div class="col-6 text-end">
+                            <ul class="list-inline">
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Contact</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">About Us</a>
+                                </li>
+                                <li class="list-inline-item">
+                                    <a href="#" class="text-muted">Terms</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 

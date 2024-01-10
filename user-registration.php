@@ -76,7 +76,7 @@
                                 <a href="user-login.php" class="sidebar-link ms-3"><i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Login</a>
                             </li>
                             <li class="sidebar-item">
-                                <a href="user-registration.php" class="sidebar-link ms-3"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
+                                <a href="user-registration.php" class="sidebar-link ms-3 text-primary"><i class="fa-solid fa-file-pen me-1"></i> Register</a>
                             </li>
                         </ul>
                     </li>
