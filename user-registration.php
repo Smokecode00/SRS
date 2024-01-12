@@ -298,7 +298,7 @@
                                                     <?php
                                                     if (isset($msg)) {
                                                         foreach ($msg as $msg) {
-                                                            echo '<span class="error-msg text-warning fw-semibold">' . $msg . '</span>';
+                                                            echo '<span class="error-msg text-warning fw-semibold">' . $msg . '</span> <a href="user-login.php" class="text-warning fw-semibold "><u>Go to Login</u></a>';
                                                         };
                                                     };
                                                     ?>

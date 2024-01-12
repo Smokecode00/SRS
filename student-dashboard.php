@@ -38,7 +38,7 @@ if (!isset($user_id)) {
                         Navigation
                     </li>
                     <li class="sidebar-item">
-                        <a href="dashboard.php" class="sidebar-link">
+                        <a class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
                             Dashboard</a>
                     </li>
@@ -230,7 +230,7 @@ if (!isset($user_id)) {
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
-                                <a href="student-dashboard.php" class="dropdown-item">Fill Form</a>
+                                <a href="student-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>
@@ -259,7 +259,7 @@ if (!isset($user_id)) {
                                     <div class="row g-0 w-100">
                                         <div class="col-6">
                                             <div class="p-3 m-1">
-                                                <h4>Your Info</h4>
+                                                <h4>Student</h4>
                                                 <h3><?php echo $fetch['name']; ?></h3>
                                                 <a href="#" class="mb-0">
                                                     <i class="fa-solid fa-at"></i>:
