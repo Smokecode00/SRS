@@ -69,7 +69,7 @@
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-regular fa-user pe-2"></i>
-                            Auth
+                            Login/Registration
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
@@ -249,7 +249,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
+                            <div class="card flex-fill border-0">
                                 <div class="card-body p-0 d-flex flex-fill">
                                     <div class="row g-0 w-100">
                                         <div class="col-6">

@@ -217,6 +217,14 @@ if (!isset($user_id)) {
                 </ul>
             </div>
         </aside>
+        <!-- PHP -->
+        <?php
+        $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
+            or die('query failed');
+        if (mysqli_num_rows($select) > 0) {
+            $fetch = mysqli_fetch_assoc($select);
+        }
+        ?>
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom ">
                 <button class="btn" id="sidebar-toggle" type="button">
@@ -226,7 +234,7 @@ if (!isset($user_id)) {
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="#" class="dropdown-item">Profile</a>
@@ -238,14 +246,7 @@ if (!isset($user_id)) {
                     </ul>
                 </div>
             </nav>
-            <!-- PHP -->
-            <?php
-            $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
-                or die('query failed');
-            if (mysqli_num_rows($select) > 0) {
-                $fetch = mysqli_fetch_assoc($select);
-            }
-            ?>
+
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
@@ -268,7 +269,8 @@ if (!isset($user_id)) {
                                             </div>
                                         </div>
                                         <div class="col-6 align-self-end text-end">
-                                            <img src="Img/logo.png" class="img-fluid illustration-img" alt="">
+                                            <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-2 " alt="" width="200" height="200">
+                                            <!-- illustration-img -->
                                         </div>
                                     </div>
                                 </div>

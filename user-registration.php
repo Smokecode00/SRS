@@ -69,7 +69,7 @@
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#auth" data-bs-toggle="collapse" aria-expanded="false">
                             <i class="fa-regular fa-user pe-2"></i>
-                            Auth
+                            Login/Registration
                         </a>
                         <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
@@ -249,6 +249,7 @@
                 $pass = md5($_POST['password']);
                 $cpass = md5($_POST['cpassword']);
                 $user_type = ($_POST['user_type']);
+                $image = ($_POST['image']);
 
                 $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
                 $result = mysqli_query($conn, $select);
@@ -260,9 +261,9 @@
                     if ($pass != $cpass) {
                         $error[] = 'Password not match!';
                     } else {
-                        $insert = "INSERT INTO registertbl(name, email, password, user_type) VALUES('$name', '$email', '$pass', '$user_type')";
+                        $insert = "INSERT INTO registertbl(name, email, password, user_type, image) VALUES('$name', '$email', '$pass', '$user_type','$image')";
                         mysqli_query($conn, $insert);
-                        $msg[] = 'Register successfully';
+                        $msg[] = 'Register successfull';
                     }
                 }
             }
@@ -276,10 +277,10 @@
                                 <div class="card bg-secondary " style="border-radius: 1rem;">
                                     <div class="row g-0">
                                         <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                            <img src="Img/logo1.png" alt="login form" class="img-fluid mt-5 ms-5 border-2" width="300" height="250" />
+                                            <img src="Img/logo1.png" alt="login form" class="img-fluid mt-5 ms-4 p-2" width="300" height="250" />
                                         </div>
                                         <div class="col-md-6 col-lg-7 d-flex align-items-center">
-                                            <div class="card-body p-4 p-lg-5 text-black">
+                                            <div class="card-body p-4 p-lg-3 text-black">
 
                                                 <form action="" method="post">
                                                     <div class="d-flex align-items-center mb-3 pb-1">
@@ -287,7 +288,7 @@
                                                         <span class="h1 fw-bold mb-0 ms-1">Lyceum-Aparri</span>
                                                     </div>
 
-                                                    <h5 class="fw-semibold mb-3 pb-3" style="letter-spacing: 1px;">Register your account</h5>
+                                                    <h5 class="fw-semibold mb-1 pb-3" style="letter-spacing: 1px;">Register your account</h5>
                                                     <?php
                                                     if (isset($error)) {
                                                         foreach ($error as $error) {
@@ -302,6 +303,10 @@
                                                         };
                                                     };
                                                     ?>
+                                                    <div class="form-outline mb-3">
+                                                        <label for="" class="form-label">Profile Picture</label>
+                                                        <input type="file" id="" name="image" class="form-control form-control text-muted" required />
+                                                    </div>
                                                     <div class="form-outline mb-3">
                                                         <input type="text" id="" name="name" class="form-control form-control text-black" placeholder="Full Name" autocomplete="off" required />
 
@@ -320,11 +325,10 @@
                                                     </div>
                                                     <select class="form-select form-select text-black mb-1" name="user_type">
                                                         <option selected>Who's User?</option>
-                                                        <option value="admin" class="text-black">Teacher</option>
+                                                        <option value="admin" class="text-black">Instructor</option>
                                                         <option value="user" class="text-black">Student</option>
                                                     </select>
-
-                                                    <div class="mt-4">
+                                                    <div class="mt-3">
                                                         <input type="submit" name="submit" value="Register" class="btn btn-primary btn-sm btn-block rounded-5" style="font-size:20px; font-weight:500; letter-spacing: 2px;">
                                                     </div>
                                                 </form>
