@@ -4,9 +4,6 @@ session_start();
 
 $user_id = $_SESSION['id'];
 
-if (!isset($user_id)) {
-    header('Location: user-login.php');
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +16,7 @@ if (!isset($user_id)) {
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
     <script src="https://kit.fontawesome.com/5c14b0052b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Styles/css.css">
-    <title>Dashboard</title>
+    <title>Profile</title>
 </head>
 
 <body>
@@ -38,7 +35,7 @@ if (!isset($user_id)) {
                         Navigation
                     </li>
                     <li class="sidebar-item">
-                        <a href="student-dashboard.php" class="sidebar-link">
+                        <a href="teacher-dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
                             Dashboard</a>
                     </li>
@@ -237,8 +234,8 @@ if (!isset($user_id)) {
                                 <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="student-profile.php" class="dropdown-item">Profile</a>
-                                <a href="student-form.php" class="dropdown-item">Fill Form</a>
+                                <a href="teacher-profile.php" class="dropdown-item">Profile</a>
+                                <a href="teacher-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>
@@ -250,34 +247,126 @@ if (!isset($user_id)) {
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
-                    <div class="mb-3">
-                        <h4>Dashboard</h4>
+                    <div class="mb-3 mt-2">
+                        <h4>Your Profile and Information</h4>
+                    </div>
+                    <hr class="text-light">
+                    <div class="row">
+                        <div class="d-flex flex-column align-items-center mb-2">
+                            <div class="d-flex justify-content-center">
+                                <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
+                            </div>
+                            <button class="btn btn-primary rounded-5  mt-3">Update</button>
+                        </div>
+                        <hr>
                     </div>
                     <div class="row">
-                        <div class="col-12 col-md-6 d-flex">
-                            <div class="card flex-fill border-0 illustration">
-                                <div class="card-body p-0 d-flex flex-fill">
-                                    <div class="row g-0 w-100">
-                                        <div class="col-6">
-                                            <div class="p-3 m-1">
-                                                <h6>Student</h6>
-                                                <h3><?php echo $fetch['name']; ?></h3>
-                                                <span id="dynamicDate" class="text-muted">
-                                                    <!-- The date will be dynamically updated here -->
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="col-6 align-self-end text-end">
-                                            <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-1" alt="" style="width: 170px; height: auto;">
-                                            <!--  illustration-img -->
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="col-4 mt-3 mb-2">
+                            <label for="" class="form-label">Full Name:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                        <div class="col-4 mt-3 mb-2 ">
+                            <label for="" class="form-label">Date of Birth:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                        <div class="col-4 mt-3 mb-2">
+                            <label for="" class="form-label">Gender:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                        <div class="col-4 mt-3 mb-2">
+                            <label for="" class="form-label">Address:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                        <div class="col-4 mt-3 mb-2">
+                            <label for="" class="form-label">Contact Number:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                        <div class="col-4 mt-3 mb-2">
+                            <label for="" class="form-label">Email:</label>
+                            <h6 class=""><u>Hello</u></h6>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="mb-1 mt-1">
+                            <h5>Previous Education</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Name of Previous School:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2 ">
+                                <label for="" class="form-label">Grade/Class Last Attend:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Academic Achievements:</label>
+                                <h6 class=""><u>Hello</u></h6>
                             </div>
                         </div>
                     </div>
-                    <!-- Table Content -->
-
+                    <hr>
+                    <div class="row">
+                        <div class="mb-1 mt-1">
+                            <h5>Additional Information</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Emergency Contact:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2 ">
+                                <label for="" class="form-label">Medical Information:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Special Needs (If any):</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="mb-1 mt-1">
+                            <h5>Parents or Guardian Information</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Name of Parents or Guardians:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2 ">
+                                <label for="" class="form-label">Contact Details:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Occupation:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="mb-1 mt-1">
+                            <h5>Upload</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Birth Certificate:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2 ">
+                                <label for="" class="form-label">Passport-sized Photo:</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                            <div class="col-4 mt-2 mb-2">
+                                <label for="" class="form-label">Academic Transcripts (If applicable):</label>
+                                <h6 class=""><u>Hello</u></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
                 </div>
             </main>
             <footer class="footer">
@@ -308,25 +397,7 @@ if (!isset($user_id)) {
             </footer>
         </div>
     </div>
-    <script>
-        function updateDate() {
-            var currentDate = new Date();
-            var options = {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            };
-            var formattedDate = currentDate.toLocaleDateString('en-US', options);
 
-            document.getElementById('dynamicDate').textContent = formattedDate;
-        }
-
-        // Call the function initially
-        updateDate();
-
-        // Set up an interval to update the date every day
-        setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
-    </script>
 
     <!-- Bootstrap -->
     <script src="Js/js.js"></script>
