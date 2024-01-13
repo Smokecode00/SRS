@@ -38,7 +38,7 @@ if (!isset($user_id)) {
                         Navigation
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link">
+                        <a href="student-dashboard.php" class="sidebar-link">
                             <i class="fa-solid fa-list pe-2"></i>
                             Dashboard</a>
                     </li>
@@ -237,7 +237,7 @@ if (!isset($user_id)) {
                                 <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="student-profile.php" class="dropdown-item">Profile</a>
                                 <a href="student-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
@@ -262,14 +262,13 @@ if (!isset($user_id)) {
                                             <div class="p-3 m-1">
                                                 <h6>Student</h6>
                                                 <h3><?php echo $fetch['name']; ?></h3>
-                                                <a href="#" class="mb-0">
-                                                    <i class="fa-solid fa-at"></i>:
-                                                    <?php echo $fetch['email']; ?>
-                                                </a>
+                                                <span id="dynamicDate" class="text-muted">
+                                                    <!-- The date will be dynamically updated here -->
+                                                </span>
                                             </div>
                                         </div>
                                         <div class="col-6 align-self-end text-end">
-                                            <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-2 " alt="" width="200" height="200">
+                                            <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-2 " alt="" width="170" height="170">
                                             <!--  illustration-img -->
                                         </div>
                                     </div>
@@ -294,26 +293,6 @@ if (!isset($user_id)) {
                                                 <span id="dynamicDate" class="text-muted">
                                                     <!-- The date will be dynamically updated here -->
                                                 </span>
-
-                                                <script>
-                                                    function updateDate() {
-                                                        var currentDate = new Date();
-                                                        var options = {
-                                                            year: 'numeric',
-                                                            month: 'long',
-                                                            day: 'numeric'
-                                                        };
-                                                        var formattedDate = currentDate.toLocaleDateString('en-US', options);
-
-                                                        document.getElementById('dynamicDate').textContent = formattedDate;
-                                                    }
-
-                                                    // Call the function initially
-                                                    updateDate();
-
-                                                    // Set up an interval to update the date every day
-                                                    setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
-                                                </script>
 
                                             </div>
                                         </div>
@@ -354,7 +333,25 @@ if (!isset($user_id)) {
             </footer>
         </div>
     </div>
+    <script>
+        function updateDate() {
+            var currentDate = new Date();
+            var options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            var formattedDate = currentDate.toLocaleDateString('en-US', options);
 
+            document.getElementById('dynamicDate').textContent = formattedDate;
+        }
+
+        // Call the function initially
+        updateDate();
+
+        // Set up an interval to update the date every day
+        setInterval(updateDate, 86400000); // 86400000 milliseconds = 1 day
+    </script>
 
     <!-- Bootstrap -->
     <script src="Js/js.js"></script>

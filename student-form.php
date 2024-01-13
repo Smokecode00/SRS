@@ -1,5 +1,8 @@
 <?php
 include 'Includes/dbconn.php';
+session_start();
+
+$user_id = $_SESSION['id'];
 
 if (isset($_POST['submit'])) {
     $fullname = $_POST['fname'];
@@ -252,6 +255,13 @@ if (isset($_POST['submit'])) {
                 </ul>
             </div>
         </aside>
+        <?php
+        $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
+            or die('query failed');
+        if (mysqli_num_rows($select) > 0) {
+            $fetch = mysqli_fetch_assoc($select);
+        }
+        ?>
         <div class="main">
             <nav class="navbar navbar-expand px-3 border-bottom ">
                 <button class="btn" id="sidebar-toggle" type="button">
@@ -261,10 +271,10 @@ if (isset($_POST['submit'])) {
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
+                                <a href="student-profile.php" class="dropdown-item">Profile</a>
                                 <a href="student-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
