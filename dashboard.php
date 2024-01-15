@@ -233,8 +233,7 @@
                                 <img src="Img/user.png" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a href="#" class="dropdown-item">Profile</a>
-                                <a href="comment.php" class="dropdown-item">Fill Form</a>
+                                <a href="comment.php" class="dropdown-item">Profile</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                             </div>
                         </li>

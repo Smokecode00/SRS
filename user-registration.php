@@ -1,3 +1,49 @@
+<?php
+include 'Includes/dbconn.php';
+
+// Function to redirect based on user type
+function redirectUser($userType)
+{
+    if ($userType == "admin") {
+        header("Location: teacher-form.php");
+        exit();
+    } elseif ($userType == "user") {
+        header("Location: student-form.php");
+        exit();
+    } else {
+        echo "Invalid user type";
+        exit();
+    }
+}
+
+if (isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = md5($_POST['password']);
+    $cpass = md5($_POST['cpassword']);
+    $user_type = ($_POST['user_type']);
+    $image = ($_POST['image']);
+
+    $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+        $error[] = 'User already exists!';
+    } else {
+        if ($pass != $cpass) {
+            $error[] = 'Password not match!';
+        } else {
+            $insert = "INSERT INTO registertbl(name, email, password, user_type, image) VALUES('$name', '$email', '$pass', '$user_type','$image')";
+            mysqli_query($conn, $insert);
+            $msg[] = 'Register successful';
+
+            // Redirect based on user type after successful registration
+            redirectUser($user_type);
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -239,35 +285,6 @@
                     </ul>
                 </div>
             </nav>
-            <!-- PHP -->
-            <?php
-            include 'Includes/dbconn.php';
-
-            if (isset($_POST['submit'])) {
-                $name = mysqli_real_escape_string($conn, $_POST['name']);
-                $email = mysqli_real_escape_string($conn, $_POST['email']);
-                $pass = md5($_POST['password']);
-                $cpass = md5($_POST['cpassword']);
-                $user_type = ($_POST['user_type']);
-                $image = ($_POST['image']);
-
-                $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
-                $result = mysqli_query($conn, $select);
-
-                if (mysqli_num_rows($result) > 0) {
-
-                    $error[] = 'User already exists!';
-                } else {
-                    if ($pass != $cpass) {
-                        $error[] = 'Password not match!';
-                    } else {
-                        $insert = "INSERT INTO registertbl(name, email, password, user_type, image) VALUES('$name', '$email', '$pass', '$user_type','$image')";
-                        mysqli_query($conn, $insert);
-                        $msg[] = 'Register successfull';
-                    }
-                }
-            }
-            ?>
             <!-- Content -->
             <main class="content px-3 py-2">
                 <div class="container-fluid">
