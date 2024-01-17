@@ -55,7 +55,7 @@ $user_id = $_SESSION['id'];
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#courses" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-solid fa-file-pen pe-1"></i>
+                            <i class="fa-solid fa-book pe-1"></i>
                             Courses Offered
                         </a>
                         <ul id="courses" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
@@ -235,7 +235,6 @@ $user_id = $_SESSION['id'];
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="teacher-profile.php" class="dropdown-item">Profile</a>
-                                <a href="teacher-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>
@@ -260,51 +259,53 @@ $user_id = $_SESSION['id'];
                         </div>
                         <hr>
                     </div>
+                    <?php
+                    $select = mysqli_query($conn, "SELECT * FROM `instructor` WHERE fullname = '$user_id'")
+                        or die('query failed');
+                    if (mysqli_num_rows($select) > 0) {
+                        $fetch = mysqli_fetch_assoc($select);
+                    }
+                    ?>
                     <div class="row">
                         <div class="col-4 mt-3 mb-2">
                             <label for="" class="form-label">Full Name:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <h6 class=""><?php echo $fetch['fullname']; ?></h6>
                         </div>
                         <div class="col-4 mt-3 mb-2 ">
-                            <label for="" class="form-label">Date of Birth:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <label for="" class="form-label">Age:</label>
+                            <h6 class=""><?php echo $fetch['age']; ?></h6>
                         </div>
                         <div class="col-4 mt-3 mb-2">
                             <label for="" class="form-label">Gender:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <h6 class=""><?php echo $fetch['gender']; ?></h6>
                         </div>
                         <div class="col-4 mt-3 mb-2">
                             <label for="" class="form-label">Address:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <h6 class=""><?php echo $fetch['address']; ?></h6>
                         </div>
                         <div class="col-4 mt-3 mb-2">
                             <label for="" class="form-label">Contact Number:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <h6 class=""><?php echo $fetch['contact']; ?></h6>
                         </div>
                         <div class="col-4 mt-3 mb-2">
                             <label for="" class="form-label">Email:</label>
-                            <h6 class=""><u>Hello</u></h6>
+                            <h6 class=""><?php echo $fetch['email']; ?></h6>
                         </div>
                     </div>
-                    <hr>
                     <div class="row">
-                        <div class="mb-1 mt-1">
-                            <h5>Previous Education</h5>
+                        <div class="col-4 mt-2 mb-2">
+                            <label for="" class="form-label">Your Preferable Teaching Area:</label>
+                            <h6 class=""><?php echo $fetch['teaching_area']; ?></h6>
                         </div>
-                        <div class="row">
-                            <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Name of Previous School:</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
-                            <div class="col-4 mt-2 mb-2 ">
-                                <label for="" class="form-label">Grade/Class Last Attend:</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
-                            <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Academic Achievements:</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
+                        <div class="col-4 mt-2 mb-2 ">
+                            <label for="" class="form-label">Classes you can teach:</label>
+                            <h6 class=""><?php echo $fetch['class_teach']; ?></h6>
                         </div>
+                        <div class="col-4 mt-2 mb-2">
+                            <label for="" class="form-label">Subject you can teach:</label>
+                            <h6 class=""><?php echo $fetch['subject_teach']; ?></h6>
+                        </div>
+
                     </div>
                     <hr>
                     <div class="row">
@@ -314,35 +315,15 @@ $user_id = $_SESSION['id'];
                         <div class="row">
                             <div class="col-4 mt-2 mb-2">
                                 <label for="" class="form-label">Emergency Contact:</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <h6 class=""><?php echo $fetch['emergency']; ?></h6>
                             </div>
                             <div class="col-4 mt-2 mb-2 ">
                                 <label for="" class="form-label">Medical Information:</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <h6 class=""><?php echo $fetch['medical']; ?></h6>
                             </div>
                             <div class="col-4 mt-2 mb-2">
                                 <label for="" class="form-label">Special Needs (If any):</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="mb-1 mt-1">
-                            <h5>Parents or Guardian Information</h5>
-                        </div>
-                        <div class="row">
-                            <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Name of Parents or Guardians:</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
-                            <div class="col-4 mt-2 mb-2 ">
-                                <label for="" class="form-label">Contact Details:</label>
-                                <h6 class=""><u>Hello</u></h6>
-                            </div>
-                            <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Occupation:</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <h6 class=""><?php echo $fetch['special_needs']; ?></h6>
                             </div>
                         </div>
                     </div>
@@ -353,16 +334,16 @@ $user_id = $_SESSION['id'];
                         </div>
                         <div class="row">
                             <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Birth Certificate:</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <label for="" class="form-label">Birth Certificate:</label><br>
+                                <img src="Img/<?php echo $fetch['birth_certificate'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>
                             <div class="col-4 mt-2 mb-2 ">
-                                <label for="" class="form-label">Passport-sized Photo:</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <label for="" class="form-label">Passport-sized Photo:</label><br>
+                                <img src="Img/<?php echo $fetch['passport'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>
                             <div class="col-4 mt-2 mb-2">
-                                <label for="" class="form-label">Academic Transcripts (If applicable):</label>
-                                <h6 class=""><u>Hello</u></h6>
+                                <label for="" class="form-label">Academic Transcripts (If applicable):</label><br>
+                                <img src="Img/<?php echo $fetch['transcript'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>
                         </div>
                     </div>

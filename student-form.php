@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
     $select = mysqli_query($conn, "SELECT * FROM student_register WHERE email='$email'") or die('query failed');
 
     if (mysqli_num_rows($select) > 0) {
-        $msg[] = "error";
+        $msg[] = '<h4 class="text-danger mb-2">Email already exists!</h4>';
     } else {
         $sql = "INSERT INTO student_register (`id`, `fullname`, `birthdate`, `gender`, `address`, `contact_number`, `email`, `past_school`, `grades`, `achievement`, `emergency_contact`, `medical_info`, `special_need`, `parent_name`, `contact_detail`, `occupation`, `birth_certificate`, `passport`, `academic_trancript`) VALUES
             (NULL, '$fullname', '$birthdate', '$gender', '$address', '$contact_info',

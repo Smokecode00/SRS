@@ -48,8 +48,8 @@
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link collapsed" data-bs-target="#courses" data-bs-toggle="collapse" aria-expanded="false">
-                            <i class="fa-solid fa-file-pen pe-1"></i>
-                            Courses Offered
+                            <<i class="fa-solid fa-book pe-1"></i>
+                                Courses Offered
                         </a>
                         <ul id="courses" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li class="sidebar-item">
