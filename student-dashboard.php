@@ -77,24 +77,10 @@ if (!isset($user_id)) {
                         </ul>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link collapsed" data-bs-target="#enroll" data-bs-toggle="collapse" aria-expanded="false">
+                        <a href="enrollment.php" class="sidebar-link collapsed">
                             <i class="fa-solid fa-file-pen pe-1"></i>
                             Enrollment
                         </a>
-                        <ul id="enroll" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• Bachelor's Courses(13)</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• Master's Courses(2)</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• Doctorate Courses(1)</a>
-                            </li>
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link ms-3">• Certificate Courses(4)</a>
-                            </li>
-                        </ul>
                     </li>
                     <li class="sidebar-header">
                         Menu

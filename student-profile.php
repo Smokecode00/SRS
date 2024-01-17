@@ -73,6 +73,12 @@ $user_id = $_SESSION['id'];
                             </li>
                         </ul>
                     </li>
+                    <li class="sidebar-item">
+                        <a href="enrollment.php" class="sidebar-link collapsed">
+                            <i class="fa-solid fa-file-pen pe-1"></i>
+                            Enrollment
+                        </a>
+                    </li>
                     <li class="sidebar-header">
                         Menu
                     </li>
