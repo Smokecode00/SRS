@@ -366,14 +366,14 @@
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-success">•</th>
-                                        <td>Jam</td>
+                                        <td>Jamelle</td>
                                         <td>Raposas</td>
                                         <td>BSIT</td>
                                         <td>3-A</td>
                                     </tr>
                                     <tr>
                                         <th scope="row" class="text-success">•</th>
-                                        <td>Marjorie</td>
+                                        <td>Marjory</td>
                                         <td>Gumarang</td>
                                         <td>BSIT</td>
                                         <td>3-A</td>

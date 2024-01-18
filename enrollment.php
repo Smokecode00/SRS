@@ -225,7 +225,7 @@ if (!isset($user_id)) {
         </aside>
         <!-- PHP -->
         <?php
-        $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
+        $select = mysqli_query($conn, "SELECT * FROM `student_register` WHERE fullname = '$user_id'")
             or die('query failed');
         if (mysqli_num_rows($select) > 0) {
             $fetch = mysqli_fetch_assoc($select);
@@ -240,7 +240,7 @@ if (!isset($user_id)) {
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/<?php echo $fetch['passport'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="student-profile.php" class="dropdown-item">Profile</a>
