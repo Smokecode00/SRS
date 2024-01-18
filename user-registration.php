@@ -22,7 +22,6 @@ if (isset($_POST['submit'])) {
     $pass = md5($_POST['password']);
     $cpass = md5($_POST['cpassword']);
     $user_type = ($_POST['user_type']);
-    $image = ($_POST['image']);
 
     $select = "SELECT * FROM registertbl WHERE email = '$email' && password = '$pass'";
     $result = mysqli_query($conn, $select);
@@ -33,7 +32,7 @@ if (isset($_POST['submit'])) {
         if ($pass != $cpass) {
             $error[] = 'Password not match!';
         } else {
-            $insert = "INSERT INTO registertbl(name, email, password, user_type, image) VALUES('$name', '$email', '$pass', '$user_type','$image')";
+            $insert = "INSERT INTO registertbl(name, email, password, user_type) VALUES('$name', '$email', '$pass', '$user_type')";
             mysqli_query($conn, $insert);
             $msg[] = 'Register successful';
 
@@ -320,10 +319,6 @@ if (isset($_POST['submit'])) {
                                                         };
                                                     };
                                                     ?>
-                                                    <div class="form-outline mb-3">
-                                                        <label for="" class="form-label">Profile Picture</label>
-                                                        <input type="file" id="" name="image" class="form-control form-control text-muted" required />
-                                                    </div>
                                                     <div class="form-outline mb-3">
                                                         <input type="text" id="" name="name" class="form-control form-control text-black" placeholder="Full Name" autocomplete="off" required />
 

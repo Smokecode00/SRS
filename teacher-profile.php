@@ -216,7 +216,7 @@ $user_id = $_SESSION['id'];
         </aside>
         <!-- PHP -->
         <?php
-        $select = mysqli_query($conn, "SELECT * FROM `registertbl` WHERE name = '$user_id'")
+        $select = mysqli_query($conn, "SELECT * FROM `instructor` WHERE fullname = '$user_id'")
             or die('query failed');
         if (mysqli_num_rows($select) > 0) {
             $fetch = mysqli_fetch_assoc($select);
@@ -231,7 +231,7 @@ $user_id = $_SESSION['id'];
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown">
                             <a href="#" data-bs-toggle="dropdown" class="nav-icon pe-md-0">
-                                <img src="Img/<?php echo $fetch['image'] ?>" class="avatar img-fluid rounded" alt="">
+                                <img src="Img/<?php echo $fetch['passport'] ?>" class="avatar img-fluid rounded" alt="">
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="teacher-profile.php" class="dropdown-item">Profile</a>
@@ -253,7 +253,7 @@ $user_id = $_SESSION['id'];
                     <div class="row">
                         <div class="d-flex flex-column align-items-center mb-2">
                             <div class="d-flex justify-content-center">
-                                <img src="Img/<?php echo $fetch['image'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
+                                <img src="Img/<?php echo $fetch['passport'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>
                             <button class="btn btn-primary rounded-5  mt-3">Update</button>
                         </div>
@@ -333,15 +333,11 @@ $user_id = $_SESSION['id'];
                             <h5>Upload</h5>
                         </div>
                         <div class="row">
-                            <div class="col-4 mt-2 mb-2">
+                            <div class="col-5 mt-2 mb-2">
                                 <label for="" class="form-label">Birth Certificate:</label><br>
                                 <img src="Img/<?php echo $fetch['birth_certificate'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>
-                            <div class="col-4 mt-2 mb-2 ">
-                                <label for="" class="form-label">Passport-sized Photo:</label><br>
-                                <img src="Img/<?php echo $fetch['passport'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
-                            </div>
-                            <div class="col-4 mt-2 mb-2">
+                            <div class="col-5 mt-2 mb-2">
                                 <label for="" class="form-label">Academic Transcripts (If applicable):</label><br>
                                 <img src="Img/<?php echo $fetch['transcript'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
                             </div>

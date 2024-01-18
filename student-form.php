@@ -380,7 +380,7 @@ if (isset($_POST['submit'])) {
                                 <input type="file" name="certif" class="form-control" required>
                             </div>
                             <div class="col-lg-4 mb-2">
-                                <label for="" class="form-label">Passport-sized Photo:</label>
+                                <label for="" class="form-label">Profile Photo:</label>
                                 <input type="file" name="photo" class="form-control" required>
                             </div>
                             <div class="col-lg-4 mb-2">
