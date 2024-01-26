@@ -238,7 +238,6 @@ if (!isset($user_id)) {
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
                                 <a href="teacher-profile.php" class="dropdown-item">Profile</a>
-                                <a href="teacher-form.php" class="dropdown-item">Fill Form</a>
                                 <a href="#" class="dropdown-item">Setting</a>
                                 <a href="logout.php" class="dropdown-item text-danger">Logout</a>
                             </div>

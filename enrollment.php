@@ -566,7 +566,7 @@ if (!isset($user_id)) {
                         <hr>
                         <div class="row">
                             <div class="mb-2">
-                                <input type="submit" value="Enroll" name="submit" class="btn btn-success">
+                                <input type="submit" value="Enroll" name="" class="btn btn-success">
                                 <a href="enrollment.php">
                                     <input type="button" value="Clear" class="btn btn-danger"></a>
                             </div>

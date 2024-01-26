@@ -253,7 +253,7 @@ $user_id = $_SESSION['id'];
                     <div class="row">
                         <div class="d-flex flex-column align-items-center mb-2">
                             <div class="d-flex justify-content-center">
-                                <img src="Img/<?php echo $fetch['passport'] ?>" class="img-fluid rounded-2" alt="" width="130" height="130">
+                                <img src="Img/<?php echo $fetch['passport'] ?>" class="img-fluid rounded-2s" alt="" width="130" height="130">
                             </div>
                             <button class="btn btn-primary rounded-5  mt-3">Update</button>
                         </div>
